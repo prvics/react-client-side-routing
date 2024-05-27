@@ -1,0 +1,124 @@
+GET http://localhost:4000/api/v2/languages
+
+###
+
+GET http://localhost:4000/api/v2/languages/3
+
+###
+
+GET http://localhost:4000/api/v2/languages/123
+
+###
+
+POST http://localhost:4000/api/v2/languages/
+Content-Type: application/json
+
+{
+  "langid": 12,
+  "name": "BASIC",
+  "dob": 1964,
+  "github23_pr": 1.0,
+  "github23_stars": 1.0,
+  "designer": "John F. Kemeny, Thomas E. Kurtz",
+  "maintainer": "",
+  "logo": ""
+}
+###
+
+POST http://localhost:4000/api/v2/languages/
+Content-Type: application/json
+
+[
+  {
+    "langid": 50,
+    "name": "C++",
+    "dob": 1983,
+    "github23_pr": 1.0,
+    "github23_stars": 1.0,
+    "designer": "Bjarne Stroustrup",
+    "maintainer": "ISO/IEC",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/150px-ISO_C%2B%2B_Logo.svg.png"
+  },
+  {
+    "langid": 20,
+    "name": "Mojo",
+    "dob": 2023,
+    "github23_pr": 0.0,
+    "github23_stars": 0.0,
+    "designer": "Chris Lattner",
+    "maintainer": "Modular Inc.",
+    "logo": "https://assets-global.website-files.com/63f9f100025c058594957cca/644c98b52c78b418f48de3dc_Mojo%20White%20Background%20(2).png"
+    }
+]
+###
+
+GET http://localhost:4000/api/v2/languages/?search=ja
+
+###
+
+GET http://localhost:4000/api/v2/languages/?search=eich
+
+###
+
+GET http://localhost:4000/api/v2/languages/?search=microsoft
+
+###
+
+GET http://localhost:4000/api/v2/languages/?orderBy=name&dir=asc
+
+###
+
+GET http://localhost:4000/api/v2/languages/?orderBy=name&dir=desc
+
+###
+
+GET http://localhost:4000/api/v2/languages/?orderBy=dob&dir=asc
+
+###
+
+GET http://localhost:4000/api/v2/languages/?orderBy=dob&dir=desc
+
+###
+
+GET http://localhost:4000/api/v2/languages/?orderBy=github23_stars&dir=asc
+
+###
+
+GET http://localhost:4000/api/v2/languages/?orderBy=github23_stars&dir=desc
+
+###
+
+GET http://localhost:4000/api/v2/languages/?orderBy=github23_stars&dir=desc&search=ja
+
+###
+
+PATCH http://localhost:4000/api/v2/languages/15
+Content-Type: application/json
+
+{
+  "langid": 15,
+  "name": "basic----",
+  "dob": 1964,
+  "github23_pr": 1.0,
+  "github23_stars": 1.0,
+  "designer": "John F. Kemeny, Thomas E. Kurtz",
+  "maintainer": "",
+  "logo": ""
+}
+###
+
+PATCH http://localhost:4000/api/v2/languages/15
+Content-Type: application/json
+
+{
+  "name": "basic!!!!!"
+}
+###
+
+GET http://localhost:4000/api/v2/languages/?min-stars=10&min-date=1990
+
+###
+
+GET http://localhost:4000/api/v2/languages/?max-stars=10&max-date=1990
+
+###
